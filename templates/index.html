@@ -1,0 +1,53 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <style>
+      body{
+        background-color: lightcyan;
+      }
+    </style>
+</head>
+
+<body class="d-flex justify-content-center flex-wrap align-content-center">
+ 
+ 
+<div>
+    <br>
+    <h1 class="text-primary">Image processing</h1>
+    <p class="text-secondary ml-5 pl-5">Upload tyre Image</p>
+    <br>
+     
+    
+    <form method="post" action="/" enctype="multipart/form-data">
+         
+             
+            <input type="file" name="file"  autocomplete="off" required class="ml-5" accept="image/*"><br><br>
+            
+            <input type="submit" value="Submit" style="margin-left:120px">
+         
+    </form>
+
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    
+    {% if filename %}
+        <div>
+            <img src="{{ url_for('display_image', filename=filename) }}">
+        </div>
+    {% endif %}
+</div>
+ 
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+Flask==2.0.2
+gunicorn==20.1.0
+itsdangerous==2.0.1
+Jinja2==3.0.2
+MarkupSafe==2.0.1
+Werkzeug==2.0.2
+opencv-python==4.5.3.56
+os-sys==2.1.4
+urllib3==1.26.7
+ 
+
